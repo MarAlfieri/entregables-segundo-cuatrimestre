@@ -1,4 +1,4 @@
-
+git 
 fetch('https://fakestoreapi.com/products')
 .then(resp => resp.json())
 .then(data => {
@@ -26,12 +26,10 @@ fetch('https://fakestoreapi.com/products')
         cardContainer.appendChild(card);
     };
 
-    // Asegurarse de que el DOM esté completamente cargado antes de agregar los elementos
     window.addEventListener("load", () => {
         for (let i = 0; i < data.length; i++) {
             crearCard(data[i]);
         }
-        // Añadir el contenedor al cuerpo del documento
         document.body.appendChild(cardContainer);
     });
     setTimeout(() => {
