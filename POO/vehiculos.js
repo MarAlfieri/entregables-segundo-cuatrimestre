@@ -4,13 +4,17 @@ exports.Vehiculo = void 0;
 //Clase de cración de vehiculos de diferentes tipos
 var Vehiculo = /** @class */ (function () {
     //Construcción del objeto
-    function Vehiculo(tipo, marca, modelo, año) {
+    function Vehiculo(patente, tipo, marca, modelo, año) {
+        this.patente = patente;
         this.tipo = tipo;
         this.marca = marca;
         this.modelo = modelo;
         this.año = año;
     }
     // Funciones de información
+    Vehiculo.prototype.getPatente = function () {
+        return this.patente;
+    };
     Vehiculo.prototype.getTipo = function () {
         return this.tipo;
     };
@@ -24,6 +28,9 @@ var Vehiculo = /** @class */ (function () {
         return this.año;
     };
     //Funciones de modificaciones
+    Vehiculo.prototype.setPatente = function (nuevaPatente) {
+        this.patente = nuevaPatente;
+    };
     Vehiculo.prototype.setTipo = function (nuevoTipo) {
         this.tipo = nuevoTipo;
     };

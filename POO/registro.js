@@ -4,15 +4,17 @@ exports.RegistroAutomotor = void 0;
 var RegistroAutomotor = /** @class */ (function () {
     //Construcción del objeto
     function RegistroAutomotor(nombre) {
-        this.vehiculos = [];
+        this.vehiculos = []; //Arreglo de Objetos vehículos
         this.nombre = nombre;
     }
+    // Funciones de información
     RegistroAutomotor.prototype.nombreRegistro = function () {
         return this.nombre;
     };
     RegistroAutomotor.prototype.obtenerVehiculo = function (indice) {
         return this.vehiculos[indice];
     };
+    //Funciones de modificaciones
     RegistroAutomotor.prototype.agregarVehiculo = function (vehiculo) {
         this.vehiculos.push(vehiculo);
     };
@@ -21,10 +23,8 @@ var RegistroAutomotor = /** @class */ (function () {
             this.vehiculos[indice] = nuevoVehiculo;
         }
     };
-    RegistroAutomotor.prototype.darDeBaja = function (indice) {
-        if (indice >= 0 && indice < this.vehiculos.length) {
-            this.vehiculos.splice(indice, 1);
-        }
+    RegistroAutomotor.prototype.darDeBaja = function (patente) {
+        this.vehiculos = this.vehiculos.filter(function (vehiculos) { return vehiculos.getPatente() !== patente; });
     };
     return RegistroAutomotor;
 }());
