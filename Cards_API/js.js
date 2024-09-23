@@ -5,6 +5,7 @@ fetch('https://fakestoreapi.com/products')
     let cardContainer = document.createElement("div");
     cardContainer.classList.add("card-container");
     let crearCard = (producto) => {
+        
         let card = document.createElement("div");
         card.classList.add("card-producto");
 
