@@ -7,7 +7,7 @@ export class Vehiculo {
     private año: number;
     
     //Construcción del objeto
-    constructor(patente: string, tipo: string, marca: string, modelo: string, año: number) {
+    public constructor(patente: string, tipo: string, marca: string, modelo: string, año: number) {
         this.patente = patente;
         this.tipo = tipo;
         this.marca = marca;
