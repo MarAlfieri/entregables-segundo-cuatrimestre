@@ -17,7 +17,7 @@ registro.agregarVehiculo(camion1);
 
 //Función de Impresion de vehículos del registro
 function imprimirVehiculos( indexInicio: number, indexFinal: number) {
-    console.log(registro.nombreRegistro()); //Titulo del informe
+    console.log(registro.obtenerNombreRegistro()); //Titulo del informe
     console.log("Listado de vehiculos del Registro desde "+(indexInicio+1) +" hasta "+ indexFinal)
     for (let index = indexInicio; index < indexFinal; index++) {
         console.log(JSON.stringify(registro.obtenerVehiculo(index)));
