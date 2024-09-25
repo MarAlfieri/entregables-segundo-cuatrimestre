@@ -16,43 +16,43 @@ export class Vehiculo {
     }
 
     // Funciones de información
-    getPatente(): string {
+    public getPatente(): string {
         return this.patente;
     }
 
-    getTipo(): string {
+    public getTipo(): string {
         return this.tipo;
     }
     
-    getMarca(): string {
+    public getMarca(): string {
         return this.marca;
     }
     
-    getModelo(): string {
+    public getModelo(): string {
         return this.modelo;
     }
     
-    getAño(): number {
+    public getAño(): number {
         return this.año;
     }
     
     //Funciones de modificaciones
-    setPatente(nuevaPatente: string): void {
+    public setPatente(nuevaPatente: string): void {
         this.patente = nuevaPatente;
     }
-    setTipo(nuevoTipo: string): void {
+    public setTipo(nuevoTipo: string): void {
         this.tipo = nuevoTipo;
     }
     
-    setMarca(nuevaMarca: string): void {
+    public setMarca(nuevaMarca: string): void {
         this.marca = nuevaMarca;
     }
 
-    setModelo(nuevoModelo: string): void {
+    public setModelo(nuevoModelo: string): void {
         this.modelo = nuevoModelo;
     }
 
-    setAño(nuevoAño: number): void {
+    public setAño(nuevoAño: number): void {
         this.año = nuevoAño;
     }
 }

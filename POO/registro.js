@@ -8,7 +8,7 @@ var RegistroAutomotor = /** @class */ (function () {
         this.nombre = nombre;
     }
     // Funciones de información
-    RegistroAutomotor.prototype.nombreRegistro = function () {
+    RegistroAutomotor.prototype.obtenerNombreRegistro = function () {
         return this.nombre;
     };
     RegistroAutomotor.prototype.obtenerVehiculo = function (indice) {
