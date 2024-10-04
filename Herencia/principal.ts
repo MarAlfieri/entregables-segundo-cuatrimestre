@@ -1,43 +1,52 @@
 import { RegistroAutomotor } from "./registro";
-import { Vehiculo } from "./vehiculo";
-import { Auto } from "./auto";
-import { Moto } from "./moto";
-import { Camion } from "./camion";
 
 // Creación de nuevo registro automotor
 const registro = new RegistroAutomotor("Registro Olavarría");
 
-// Creación de vehiculos (Motos, Autos y Camiones)
-const auto1 = new Vehiculo("XBV 432", "Toyota", "Corolla", 2020);
-const moto1 = new Vehiculo("XCV 553", "Honda", "CBR", 2019);
-const camion1 = new Vehiculo("PAC 323", "Ford", "1114", 1970);
+//Ingresos de vehiculos 1 = MOTO, 2= AUTO Y 3 = CAMION //El último parámetro si es "APTO", es opcional, por defecto "true"
+registro.agregarVehiculo(1, "XBV 432", "Honda", "CBR", 2020, false);
+registro.agregarVehiculo(2, "XCV 553", "Toyota", "Corolla", 2019);
+registro.agregarVehiculo(3, "PAC 323", "Ford", "1114", 1970, false);
+registro.agregarVehiculo(1, "AZF 543", "Zanella", "MX 150", 2021);
+registro.agregarVehiculo(3, "DDR 768", "Scania", "113 Topline", 2016);
 
-//Ingresos de vehiculos
-registro.agregarVehiculo(auto1);
-registro.agregarVehiculo(moto1);
-registro.agregarVehiculo(camion1);
-
+//Función determinar tipo de vehículo
+function tipoListado(tipoVehiculo: number): string | undefined{
+    switch (tipoVehiculo) {
+        case 1:
+            return "Motos";
+        case 2:
+            return "Autos";
+        case 3:
+            return "Camiones";
+        }
+    }
 //Función de Impresion de vehículos del registro
-function imprimirVehiculos( indexInicio: number, indexFinal: number) {
-    console.log(registro.obtenerNombreRegistro()); //Titulo del informe
-    console.log("Listado de vehiculos del Registro desde "+(indexInicio+1) +" hasta "+ indexFinal)
+function imprimirVehiculos(tipoVehiculo: number, indexInicio: number, indexFinal: number, imprimirRegistro?: boolean) {
+    if (imprimirRegistro != undefined && imprimirRegistro ){ //Imrpime el titulo del registro según convenga
+        console.log(registro.obtenerNombreRegistro()); //Titulo del informe
+    }
+    console.log("Listado de "+tipoListado(tipoVehiculo)+" del Registro desde "+(indexInicio+1) +" hasta "+ indexFinal)
     for (let index = indexInicio; index < indexFinal; index++) {
-        console.log(JSON.stringify(registro.obtenerVehiculo(index)));
+        if (registro.obtenerVehiculo(tipoVehiculo, index) != undefined) {
+            console.log(JSON.stringify(registro.obtenerVehiculo(tipoVehiculo, index)));
+        }
     }
 }
 
 //Imprimo vehiculos para comprobación inicial
 
-imprimirVehiculos(0,3); 
+imprimirVehiculos(1,0,4,true); 
+imprimirVehiculos(2,0,4); 
+imprimirVehiculos(3,0,4); 
 
-//Cambio Nombre "auto1"
-auto1.setMarca("Nissan");
-auto1.setModelo("Versa");
-registro.modificarVehiculo(0, auto1); //lo modifico en el registro
-imprimirVehiculos(0,1); // Imprime el auto1 modificado
+//Modificación de una moto
+registro.modificarVehiculo(1, 1,"XBV 555")
 
+imprimirVehiculos(1,0,4,true); 
 
-//Dar de baja un vehiculo por patente y comprobar
-registro.darDeBaja("XBV 432");
-console.log("Comprobación de que el vehiculo con patente <XBV 432> haya sido dado de baja del Registro");
-imprimirVehiculos(0,3); 
+//Baja de una moto
+registro.darDeBajaVehiculo(1,"XBV 432")
+
+//Verificación
+imprimirVehiculos(1,0,4,true); 

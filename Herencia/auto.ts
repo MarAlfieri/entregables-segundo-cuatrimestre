@@ -2,13 +2,14 @@ import { Vehiculo } from "./vehiculo";
 
 //Clase de cración de autos
 export class Auto extends Vehiculo{
-    private apto: boolean;
+    private apto: boolean = true;
         
     //Construcción del objeto
-    public constructor(patente: string, marca: string, modelo: string, año: number, apto: boolean) {
+    public constructor(patente: string, marca: string, modelo: string, año: number, apto?: boolean) {
         super(patente, marca, modelo, año);
-        this.apto = this.apto;
-        
+        if (apto != undefined) {
+            this.apto = apto;
+        }        
     }
 
     // Funciones de información
