@@ -21,21 +21,21 @@ var vehiculo_1 = require("./vehiculo");
 var Moto = /** @class */ (function (_super) {
     __extends(Moto, _super);
     //Construcción del objeto
-    function Moto(patente, marca, modelo, año, apto) {
+    function Moto(patente, marca, modelo, año, tieneBaulera) {
         var _this = _super.call(this, patente, marca, modelo, año) || this;
-        _this.apto = true;
-        if (apto != undefined) {
-            _this.apto = apto;
+        _this.tieneBaulera = false;
+        if (tieneBaulera != undefined) {
+            _this.tieneBaulera = tieneBaulera;
         }
         return _this;
     }
     // Funciones de información
-    Moto.prototype.getApto = function () {
-        return this.apto;
+    Moto.prototype.getTieneBaulera = function () {
+        return this.tieneBaulera;
     };
     //Funciones de modificaciones
-    Moto.prototype.setApto = function (apto) {
-        this.apto = apto;
+    Moto.prototype.setTieneBaulera = function (tieneBaulera) {
+        this.tieneBaulera = tieneBaulera;
     };
     return Moto;
 }(vehiculo_1.Vehiculo));

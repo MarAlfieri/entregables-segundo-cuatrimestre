@@ -29,18 +29,18 @@ var RegistroAutomotor = /** @class */ (function () {
     };
     /*Funciones de modificaciones */
     //Creo el vehículos segun el tipo y lo agrego al arreglo correspondiente
-    RegistroAutomotor.prototype.agregarVehiculo = function (tipoVehiculo, patente, marca, modelo, año, apto) {
+    RegistroAutomotor.prototype.agregarVehiculo = function (tipoVehiculo, patente, marca, modelo, año, particularidad) {
         switch (tipoVehiculo) {
             case 1:
-                var moto = new moto_1.Moto(patente, marca, modelo, año, apto);
+                var moto = new moto_1.Moto(patente, marca, modelo, año, particularidad);
                 this.motos.push(moto);
                 break;
             case 2:
-                var auto = new auto_1.Auto(patente, marca, modelo, año, apto);
+                var auto = new auto_1.Auto(patente, marca, modelo, año, particularidad);
                 this.autos.push(auto);
                 break;
             case 3:
-                var camion = new camion_1.Camion(patente, marca, modelo, año, apto);
+                var camion = new camion_1.Camion(patente, marca, modelo, año, particularidad);
                 this.camiones.push(camion);
                 break;
         }
@@ -68,8 +68,6 @@ var RegistroAutomotor = /** @class */ (function () {
         }
     };
     RegistroAutomotor.prototype.darDeBajaVehiculo = function (tipoVehiculo, patente) {
-        var index;
-        var motoBusqueda;
         switch (tipoVehiculo) {
             case 1:
                 this.motos = this.motos.filter(function (Moto) { return Moto.getPatente() !== patente; });
