@@ -21,21 +21,21 @@ var vehiculo_1 = require("./vehiculo");
 var Camion = /** @class */ (function (_super) {
     __extends(Camion, _super);
     //Construcción del objeto
-    function Camion(patente, marca, modelo, año, apto) {
+    function Camion(patente, marca, modelo, año, tieneCaja) {
         var _this = _super.call(this, patente, marca, modelo, año) || this;
-        _this.apto = true;
-        if (apto != undefined) {
-            _this.apto = apto;
+        _this.tieneCaja = false;
+        if (tieneCaja != undefined) {
+            _this.tieneCaja = tieneCaja;
         }
         return _this;
     }
     // Funciones de información
-    Camion.prototype.getApto = function () {
-        return this.apto;
+    Camion.prototype.getTieneCaja = function () {
+        return this.tieneCaja;
     };
     //Funciones de modificaciones
-    Camion.prototype.setApto = function (apto) {
-        this.apto = apto;
+    Camion.prototype.setTieneCaja = function (tieneCaja) {
+        this.tieneCaja = tieneCaja;
     };
     return Camion;
 }(vehiculo_1.Vehiculo));

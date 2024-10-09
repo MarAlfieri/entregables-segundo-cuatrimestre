@@ -33,18 +33,18 @@ export class RegistroAutomotor {
     /*Funciones de modificaciones */
 
     //Creo el vehículos segun el tipo y lo agrego al arreglo correspondiente
-    public agregarVehiculo(tipoVehiculo: number, patente: string, marca: string, modelo: string, año: number, apto?: boolean): void {
+    public agregarVehiculo(tipoVehiculo: number, patente: string, marca: string, modelo: string, año: number, particularidad?: boolean): void {
         switch (tipoVehiculo) {
             case 1:
-                const moto = new Moto(patente, marca, modelo, año, apto);
+                const moto = new Moto(patente, marca, modelo, año, particularidad);
                 this.motos.push(moto);
                 break;
             case 2:
-                const auto = new Auto(patente, marca, modelo, año, apto);
+                const auto = new Auto(patente, marca, modelo, año, particularidad);
                 this.autos.push(auto);
                 break;
             case 3:
-                const camion = new Camion(patente, marca, modelo, año, apto);
+                const camion = new Camion(patente, marca, modelo, año, particularidad);
                 this.camiones.push(camion);
                 break;
         }
@@ -74,8 +74,6 @@ export class RegistroAutomotor {
     }
     
     public darDeBajaVehiculo(tipoVehiculo: number, patente: string): void {
-        let index: number;
-        let motoBusqueda: Moto
         switch (tipoVehiculo) {
             case 1:
                 this.motos = this.motos.filter(Moto => Moto.getPatente() !== patente);
@@ -89,4 +87,3 @@ export class RegistroAutomotor {
         }
     }
 }
-

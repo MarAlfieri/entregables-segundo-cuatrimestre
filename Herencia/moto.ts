@@ -2,24 +2,24 @@ import { Vehiculo } from "./vehiculo";
 
 //Clase de cración de autos
 export class Moto extends Vehiculo{
-    private apto: boolean = true;
+    private tieneBaulera: boolean = false;
         
     //Construcción del objeto
-    public constructor(patente: string, marca: string, modelo: string, año: number, apto?: boolean) {
+    public constructor(patente: string, marca: string, modelo: string, año: number, tieneBaulera?: boolean) {
         super(patente, marca, modelo, año);
-        if (apto != undefined) {
-            this.apto = apto;
+        if (tieneBaulera != undefined) {
+            this.tieneBaulera = tieneBaulera;
         }
     }
 
     // Funciones de información
     
-    public getApto(): boolean {
-        return this.apto;
+    public getTieneBaulera(): boolean {
+        return this.tieneBaulera;
     }
     
     //Funciones de modificaciones
-    public setApto(apto: boolean){
-        this.apto = apto
+    public setTieneBaulera(tieneBaulera: boolean){
+        this.tieneBaulera = tieneBaulera;
     }
 }

@@ -4,9 +4,9 @@ var registro_1 = require("./registro");
 // Creación de nuevo registro automotor
 var registro = new registro_1.RegistroAutomotor("Registro Olavarría");
 //Ingresos de vehiculos 1 = MOTO, 2= AUTO Y 3 = CAMION //El último parámetro si es "APTO", es opcional, por defecto "true"
-registro.agregarVehiculo(1, "XBV 432", "Honda", "CBR", 2020, false);
-registro.agregarVehiculo(2, "XCV 553", "Toyota", "Corolla", 2019);
-registro.agregarVehiculo(3, "PAC 323", "Ford", "1114", 1970, false);
+registro.agregarVehiculo(1, "XBV 432", "Honda", "CBR", 2020);
+registro.agregarVehiculo(2, "XCV 553", "Toyota", "Corolla", 2019, true);
+registro.agregarVehiculo(3, "PAC 323", "Ford", "1114", 1970, true);
 registro.agregarVehiculo(1, "AZF 543", "Zanella", "MX 150", 2021);
 registro.agregarVehiculo(3, "DDR 768", "Scania", "113 Topline", 2016);
 //Función determinar tipo de vehículo
