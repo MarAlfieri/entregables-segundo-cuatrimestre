@@ -21,10 +21,10 @@ export abstract class Personaje {
     }
     
     //Metodos set para modificar propiedades privadas
-    public setNivel(nivel): void {
+    public setNivel(nivel: number): void {
         this.nivel = nivel;
     }
-    public setPuntosDeVida(puntosDeVida): void{
+    public setPuntosDeVida(puntosDeVida: number): void{
         this.puntosDeVida = puntosDeVida;
     }
 }

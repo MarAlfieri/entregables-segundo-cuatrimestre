@@ -29,7 +29,7 @@ export class Luchador extends Personaje {
         console.log(`${this.nombre} está lanzando un Puño de hierro.`);
     }
     
-    public setFuerza(fuerza): void {
+    public setFuerza(fuerza: number): void {
         this.fuerza = fuerza;
     }
 }

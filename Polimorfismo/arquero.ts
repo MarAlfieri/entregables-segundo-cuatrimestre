@@ -3,7 +3,7 @@ import { Personaje } from "./personaje";
 export class Arquero extends Personaje {
     private precision: number = 70;
 
-    constructor(nombre: string) {
+    public constructor(nombre: string) {
         super(nombre);
     }
     
@@ -29,7 +29,7 @@ export class Arquero extends Personaje {
         console.log(`${this.nombre} está disparando una flecha con precisión ${this.precision}.`);
     }
 
-    public setPresicion(precision): void {
+    public setPresicion(precision: number): void {
         this.precision = precision;
     }
 }

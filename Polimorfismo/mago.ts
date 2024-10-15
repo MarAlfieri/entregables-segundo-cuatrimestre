@@ -3,7 +3,7 @@ import { Personaje } from "./personaje";
 export class Mago extends Personaje {
     private mana: number = 100;
 
-    constructor(nombre: string) {
+    public constructor(nombre: string) {
         super(nombre);
     }
     //Metodo get
@@ -26,7 +26,7 @@ export class Mago extends Personaje {
     public lanzarHechizoDeFuego() {
         console.log(`${this.nombre} está lanzando un hechizo de fuego.`);
     }
-    public setMana(mana): void {
+    public setMana(mana: number): void {
         this.mana = mana;
     }
 }
