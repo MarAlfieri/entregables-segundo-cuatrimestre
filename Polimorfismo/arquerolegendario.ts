@@ -1,5 +1,5 @@
 import { Arquero } from "./arquero";
-
+// Clase ArqueroLegendario derivada de Arquero
 export class ArqueroLegendario extends Arquero {
     private tipoFlecha: string;
 
