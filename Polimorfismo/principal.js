@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mago_1 = require("./mago");
+var luchador_1 = require("./luchador");
+var arquero_1 = require("./arquero");
+var arquerolegendario_1 = require("./arquerolegendario");
+// Secuencia de juego
+var mago1 = new mago_1.Mago("Merlín");
+mago1.atacar();
+mago1.defender();
+mago1.nuevoAtaque();
+var luchador1 = new luchador_1.Luchador("Hércules");
+luchador1.atacar();
+luchador1.defender();
+luchador1.nuevoAtaque();
+luchador1.lanzarPuñoHierro();
+var arquero1 = new arquero_1.Arquero("Legolas");
+arquero1.atacar();
+arquero1.defender();
+arquero1.dispararFlecha();
+arquero1.nuevoAtaque();
+var ArqueroLegendario1 = new arquerolegendario_1.ArqueroLegendario("Aioros");
+ArqueroLegendario1.setTipoFlecha("Serrucho");
+ArqueroLegendario1.disparaFlechaEspecial();
