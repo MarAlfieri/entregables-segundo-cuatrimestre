@@ -1,6 +1,7 @@
 import { Mago } from "./mago";
 import { Luchador } from "./luchador";
 import { Arquero } from "./arquero";
+import { ArqueroLegendario } from "./arquerolegendario";
 
 // Secuencia de juego
 const mago1 = new Mago("Merlín");
@@ -19,3 +20,7 @@ arquero1.atacar();
 arquero1.defender();
 arquero1.dispararFlecha();
 arquero1.nuevoAtaque();
+
+const ArqueroLegendario1 = new ArqueroLegendario("Aioros");
+ArqueroLegendario1.setTipoFlecha("Serrucho");
+ArqueroLegendario1.disparaFlechaEspecial();
